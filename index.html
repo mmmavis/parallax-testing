@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Parallax Testing</title>
+    <script style="text/javascript" src="jquery-1.11.0.min.js"></script>
+    <style>
+
+      body{
+        background: #222;
+        color: #fff;
+        font-family: Arial;
+      }
+
+      .left{
+        float: left;
+        margin-left: 5%;
+      }
+
+      .right{
+        float: right;
+        margin-right: 5%;
+      }
+
+      h1{
+        text-transform: uppercase;
+        font-size: 32px;
+      }
+
+      .wrapper{
+        margin: 0 auto;
+        width: 960px;
+        overflow: hidden;
+      }
+
+      .container{
+        margin: 0 auto;
+        height: 600px;
+        width: 100%;
+        min-height: 500px;
+        max-width: 1920px;
+        position: relative;
+      }
+
+      .container article{
+        width: 100%;
+        height: 100%;
+      }
+
+      article .text{
+        width: 35%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+
+      article p{
+        line-height: 150%;
+      }
+
+      #first {
+        background: #F26964;
+      }
+
+      #second {
+        background: #FFD464;
+      }
+
+      #third{
+        background: #1352A2;
+      }
+
+      #first article {
+        background: url(bg1.png) #F26964 230px 40% no-repeat fixed;
+      }
+
+      #second article {
+        background: url(bg2.png) #FFD464 75% 0 no-repeat fixed;
+      }
+
+      #third article {
+        background: url() #1352A2 50% 0 repeat fixed;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="first" class="container">
+        <article>
+          <div class="text right">
+            <h1>Navigate Your Potential with Open Badges</h1>
+            <p>
+              Explore an ecosystem of digital badges, created in partnership with industry leaders and professionals in emerging fields such as Technology, Healthcare and Service to discover learning opportunities that are right for you.
+            </p>
+          </div>
+        </article>
+      </div>
+      <div id="second" class="container">
+        <article>
+          <div class="text left">
+            <h1>Got Badges? Now Pave Your Pathway.</h1>
+            <p>
+              Discover a network of pathways that can be personalized to meet your individual learning needs. Explore careers through a map of digital badges that connects to specific learning experiences. Get inspired by the story of real world professionals who work in growing industry fields and pave your own career path.
+            </p>
+          </div>
+        </article>
+      </div>
+      <div id="third" class="container">
+        <article>
+          <div class="text right">
+            <h1>Advisory Group</h1>
+            <p>
+              Based on recent labor market research findings, the Discovery project aims to address the needs and expectations of employers and high school youth entering the job market. This project is generously supported by the Bill and Melinda Gates foundation with input from an esteemed advisory group.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
