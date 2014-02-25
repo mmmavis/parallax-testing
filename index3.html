@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <title>Parallax Testing</title>
     <script style="text/javascript" src="jquery-1.11.0.min.js"></script>
-    <link rel="stylesheet" href="stylesheets/OpenSans.css" />
-    <link rel="stylesheet" href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" />
     <style>
 
       body{
         background: #222;
         color: #fff;
-        font-family: "Open Sans Light", Arial;
+        font-family: Arial;
       }
 
       .left{
@@ -26,8 +24,7 @@
 
       h1{
         text-transform: uppercase;
-        font-size: 40px;
-        margin-bottom: 10px;
+        font-size: 32px;
       }
 
       .wrapper{
@@ -36,29 +33,27 @@
         overflow: hidden;
       }
 
-      #header{
-        background: #fff;
-      }
-
-      #header img{
-        margin: 15px 0;
-      }
-
       .container{
         margin: 0 auto;
+        /*height: 600px;*/
         width: 100%;
         position: relative;
       }
 
       .container article{
-        min-height: 600px;
         width: 100%;
         height: 100%;
         overflow: hidden;
       }
 
+      article .text{
+        width: 35%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+
       article p{
-        line-height: 170%;
+        line-height: 150%;
       }
 
       #first {
@@ -74,33 +69,15 @@
       }
 
       #first article {
-        background: url(images/Discovery_Illustration_Magnifying-01.png) #F26964 230px 100% no-repeat fixed;
-      }
-
-      #first .text{
-        width: 40%;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        background: url(images/Discovery_Illustration_Magnifying-01.png) #F26964 230px 35% no-repeat fixed;
       }
 
       #second article {
-        background: url(images/Discovery_Illustration_Pathway-01.png) #FFD464 200px 65% no-repeat fixed;
-      }
-
-      #second .text{
-        width: 35%;
-        margin-top: 50px;
-        margin-bottom: 100px;
+        background: url(images/Discovery_Illustration_Pathway-01.png) #FFD464 75% 80% no-repeat fixed;
       }
 
       #third article {
         background: url() #1352A2 50% 0 repeat fixed;
-      }
-
-      #third .text{
-        width: 40%;
-        margin-top: 180px;
-        margin-bottom: 100px;
       }
 
       #advisory-group{
@@ -112,7 +89,7 @@
 
       .advisor{
         text-align: center;
-        margin: 5px;
+        margin: 10px;
         width: 40%;
         font-size: 12px;
       }
@@ -125,33 +102,9 @@
         margin-bottom: 5px;
       }
 
-      #sign-up-form input[type="email"]{
-        width: 65%;
-        margin: 0;
-        padding-top: 11px;
-        padding-bottom: 11px;
-        padding-left: 5px;
-        border: none;
-      }
-
-      #sign-up-form button{
-        background: #1352A2;
-        border: none;
-        color: #fff;
-        font-size: 12px;
-        width: 25%;
-        padding: 10px 0;
-      }
-
     </style>
   </head>
   <body>
-    <div id="header">
-      <div class="wrapper">
-        <a href="http://www.mozilla.org/" id="tabzilla">mozilla</a>
-        <img src="images/Discovery_Logo-01.png" class="left"/>
-      </div>
-    </div>
     <div id="first" class="container">
       <div class="wrapper">
         <article>
@@ -160,12 +113,6 @@
             <p>
               Explore an ecosystem of digital badges, created in partnership with industry leaders and professionals in emerging fields such as Technology, Healthcare and Service to discover learning opportunities that are right for you.
             </p>
-            <div>
-              <form id="sign-up-form">
-                <input type="email" placeholder="Oh! I'm interested. Email me updates please" class="left" />
-                <button type="submit" class="left">Sign Up</button>
-              </form>
-            </div>
           </div>
         </article>
       </div>
@@ -174,7 +121,7 @@
       <div class="wrapper">
         <article>
           <div class="text left">
-            <h1>Got Badges? Now Pave <br />Your Pathway.</h1>
+            <h1>Got Badges? Now Pave Your Pathway.</h1>
             <p>
               Discover a network of pathways that can be personalized to meet your individual learning needs. Explore careers through a map of digital badges that connects to specific learning experiences. Get inspired by the story of real world professionals who work in growing industry fields and pave your own career path.
             </p>
@@ -235,8 +182,29 @@
         </article>
       </div>
     </div>
-    <footer>
-      <script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
-    </footer>
+
+    <script>
+
+      $(document).ready(function(){
+        $(".container article").each(function(){
+            var container = $(this);
+            console.log(container);
+
+            $(window).scroll(function() {
+                var yPosOffset = -($(window).scrollTop() *2 );
+                console.log(container.css("backgroundPosition").split(" ")[1]);
+                // Put together our final background position
+                var xPos = container.css("backgroundPosition").split(" ")[0];
+                var yPos = container.css("backgroundPosition").split(" ")[1] + yPosOffset;
+                var coords = xPos + " " + yPos + "px";
+
+                // Move the background
+                container.css({ backgroundPosition: coords });
+            });
+        });
+      });
+
+    </script>
+
   </body>
 </html>
