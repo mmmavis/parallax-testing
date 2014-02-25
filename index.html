@@ -35,16 +35,15 @@
 
       .container{
         margin: 0 auto;
-        height: 600px;
+        /*height: 600px;*/
         width: 100%;
-        min-height: 500px;
-        max-width: 1920px;
         position: relative;
       }
 
       .container article{
         width: 100%;
         height: 100%;
+        overflow: hidden;
       }
 
       article .text{
@@ -70,22 +69,44 @@
       }
 
       #first article {
-        background: url(bg1.png) #F26964 230px 40% no-repeat fixed;
+        background: url(images/Discovery_Illustration_Magnifying-01.png) #F26964 230px 35% no-repeat fixed;
       }
 
       #second article {
-        background: url(bg2.png) #FFD464 75% 0 no-repeat fixed;
+        background: url(images/Discovery_Illustration_Pathway-01.png) #FFD464 75% 0 no-repeat fixed;
       }
 
       #third article {
         background: url() #1352A2 50% 0 repeat fixed;
       }
 
+      #advisory-group{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 50%;
+        overflow: hidden;
+      }
+
+      .advisor{
+        text-align: center;
+        margin: 10px;
+        width: 40%;
+        font-size: 12px;
+      }
+
+      .thumbnail img{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #fff;
+        margin-bottom: 5px;
+      }
+
     </style>
   </head>
   <body>
-    <div class="wrapper">
-      <div id="first" class="container">
+    <div id="first" class="container">
+      <div class="wrapper">
         <article>
           <div class="text right">
             <h1>Navigate Your Potential with Open Badges</h1>
@@ -95,7 +116,9 @@
           </div>
         </article>
       </div>
-      <div id="second" class="container">
+    </div>
+    <div id="second" class="container">
+      <div class="wrapper">
         <article>
           <div class="text left">
             <h1>Got Badges? Now Pave Your Pathway.</h1>
@@ -105,8 +128,51 @@
           </div>
         </article>
       </div>
-      <div id="third" class="container">
+    </div>
+    <div id="third" class="container">
+      <div class="wrapper">
         <article>
+          <div id="advisory-group" class="left">
+            <div class="advisor left">
+              <div class="thumbnail"><img src="images/Mike_Marriner.jpg"></div>
+              <div class="description">
+                <div class="name">Mike Marriner</div>
+                <p>
+                  Cofounder, Roadtrip Nation
+                </p>
+              </div>
+            </div>
+            <div class="advisor left">
+              <div class="thumbnail"><img src="images/John_dillow.png"></div>
+              <div class="description">
+                <div class="name">John Dillow</div>
+                <p>
+                  Co-founder, Workforce.io
+                </p>
+              </div>
+            </div>
+            <div class="advisor left">
+              <div class="thumbnail"><img src="images/constance_steinkuehler.jpg"></div>
+              <div class="description">
+                <div class="name">Constance Steinkuehler</div>
+                <p>
+                  Co-Director, Games+Learning+Society Center <br />
+                  Wisconsin Institute for Discovery <br />
+                  Associate Professor, Curriculum & Instruction <br />
+                  University of Wisconsin-Madison
+                </p>
+              </div>
+            </div>
+            <div class="advisor left">
+              <div class="thumbnail"><img src="images/Lissa_Soep.jpg"></div>
+              <div class="description">
+                <div class="name">Elisabeth (Lissa) Soep, PhD</div>
+                <p>
+                  Senior Producer & Research Director, Youth Radio
+                </p>
+              </div>
+            </div>
+          </div>
           <div class="text right">
             <h1>Advisory Group</h1>
             <p>
