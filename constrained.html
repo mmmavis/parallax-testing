@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Parallax Testing</title>
+    <script style="text/javascript" src="jquery-1.11.0.min.js"></script>
+    <style>
+
+      body{
+        background: #222;
+        color: #222;
+        font-family: Arial;
+      }
+
+      .left{
+        float: left;
+      }
+
+      .right{
+        float: right;
+      }
+
+      .wrapper{
+        margin: 0 auto;
+        width: 960px;
+        overflow: hidden;
+      }
+
+      .container{
+        margin: 0 auto;
+        height: 600px;
+        width: calc ( 100% - 100px);
+        min-height: 500px;
+        max-width: 1920px;
+        position: relative;
+        padding: 50px;
+      }
+
+      .container article{
+        height: 458px;
+      }
+
+      #first {
+        background: url(bg1.png) #F26964 280px 100% no-repeat fixed;
+      }
+
+      #second {
+        background: url(bg2.png) #FFD464 75% 0 no-repeat fixed;
+      }
+
+      #third{
+        background: url() #1352A2 50% 0 repeat fixed;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="first" class="container">
+        <article class="right">first</article>
+      </div>
+      <div id="second" class="container">
+        <article class="left">second</article>
+      </div>
+      <div id="third" class="container">
+        <article>third</article>
+      </div>
+    </div>
+
+    <script>
+
+      $(document).ready(function(){
+      $(".container").each(function(){
+          var container = $(this);
+
+          $(window).scroll(function() {
+              var yPos = -($(window).scrollTop() / 10);
+              // Put together our final background position
+              var xPos = container.css("backgroundPosition").split(" ")[0];
+              // var coords = xPos + " " + yPos + "px";
+
+              // Move the background
+              // container.css({ backgroundPosition: coords });
+          });
+      });
+    });
+
+    </script>
+
+  </body>
+</html>
