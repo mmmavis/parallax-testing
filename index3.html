@@ -42,15 +42,17 @@
 
       #header{
         background: #fff;
-        overflow: hidden;
       }
 
       #header img{
-        margin: 15px 0 15px 60px;
+        margin: 15px 0;
       }
 
       footer{
         background: #fff;
+        height: 150px;
+        color: #222;
+        padding-top: 20px;
       }
 
       .container{
@@ -89,7 +91,7 @@
       }
 
       #first article {
-        background: url(images/Discovery_Illustration_Magnifying-01.png) #F26964 230px 100px no-repeat fixed;
+        background: url(images/Discovery_Illustration_Magnifying-01.png) #F26964 0 100% no-repeat;
       }
 
       #first .text{
@@ -99,7 +101,7 @@
       }
 
       #second article {
-        background: url(images/Discovery_Illustration_Pathway-01.png) #FFD464 200px 0 no-repeat fixed;
+        background: url(images/Discovery_Illustration_Pathway-01.png) #FFD464 200px 65% no-repeat;
       }
 
       #second .text{
@@ -161,15 +163,15 @@
     </style>
   </head>
   <body>
-    <div class="wrapper">
-      <div id="header">
+    <div id="header">
+      <div class="wrapper">
         <a href="http://www.mozilla.org/" id="tabzilla">mozilla</a>
         <img src="images/Discovery_Logo-01.png" class="left"/>
       </div>
     </div>
-    <main class="wrapper">
-      <!-- FIRST SEGMENT ==================== -->
-      <div id="first" class="container">
+    <!-- FIRST SEGMENT ==================== -->
+    <div id="first" class="container">
+      <div class="wrapper">
         <article>
           <div class="text right">
             <h1>Navigate Your Potential with Open Badges</h1>
@@ -188,8 +190,10 @@
           <img class="pull-indicator" src="images/discovery_splash_page_arrow.png" />
         </div>
       </div>
-      <!-- SECOND SEGMENT ==================== -->
-      <div id="second" class="container">
+    </div>
+    <!-- SECOND SEGMENT ==================== -->
+    <div id="second" class="container">
+      <div class="wrapper">
         <article>
           <div class="text left">
             <h1>Got Badges? Now Pave <br />Your Pathway.</h1>
@@ -198,12 +202,14 @@
             </p>
           </div>
         </article>
-        <div class="center">
+      </div>
+      <div class="center">
           <img class="pull-indicator" src="images/discovery_splash_page_arrow2.png" />
         </div>
-      </div>
-      <!-- THIRD SEGMENT ==================== -->
-      <div id="third" class="container">
+    </div>
+    <!-- THIRD SEGMENT ==================== -->
+    <div id="third" class="container">
+      <div class="wrapper">
         <article>
           <div id="advisory-group" class="left">
             <div class="advisor left">
@@ -254,27 +260,13 @@
           </div>
         </article>
       </div>
-    </main>
-    <footer class="wrapper">
-      <img src="images/OpenBadges_logo.png" />
+    </div>
+    <footer>
+      <div class="wrapper">
+        header/footer placeholder; <br />
+        refer to <a href="https://f.cloud.github.com/assets/6484937/2251591/302de62c-9d9e-11e3-8c07-ee7f783fb625.jpg">here</a>
+      </div>
+      <script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
     </footer>
-    <script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
-      <script>
-        $(document).ready(function(){
-          $(".container article").each(function(){
-              var container = $(this);
-
-              $(window).scroll(function() {
-                  var yPos = ($(window).scrollTop() / 5) + 120;
-                  // Put together our final background position
-                  var xPos = container.css("backgroundPosition").split(" ")[0];
-                  var coords = xPos + " " + yPos + "px";
-
-                  // Move the background
-                  container.css({ backgroundPosition: coords });
-              });
-          });
-        });
-      </script>
   </body>
 </html>
